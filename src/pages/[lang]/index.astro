@@ -6,6 +6,7 @@ import { SolutionsCarousel } from "../../components/landing/SolutionsCarousel";
 import { TechnologiesSection } from "../../components/landing/TechnologiesSection";
 import { AITransformationSection } from "../../components/landing/AITransformationSection";
 import LandingFooter from "../../components/landing/LandingFooter.astro";
+import { ContactCTAButton } from "../../components/landing/ContactCTAButton";
 import { getTranslations, supportedLanguages, localizedPath } from "../../lib/i18n";
 import type { Lang } from "../../lib/i18n";
 
@@ -21,16 +22,16 @@ const t = getTranslations(lang);
 
 <LandingLayout lang={lang}>
   <!-- Floating Navbar (scroll-aware, mobile drawer) -->
-  <LandingFloatingNav lang={lang} navbar={t.navbar} client:load />
+  <LandingFloatingNav lang={lang} navbar={t.navbar} contactDrawer={t.contactDrawer} client:load />
 
   <!-- Hero Section (aurora animated background) -->
   <HeroSection hero={t.hero} lang={lang} client:load />
 
   <!-- Solutions Carousel -->
-  <SolutionsCarousel features={t.features} client:visible />
+  <SolutionsCarousel features={t.features} client:load />
 
   <!-- Technologies: orbital animation + accordion -->
-  <TechnologiesSection advanced={t.advanced} client:visible />
+  <TechnologiesSection advanced={t.advanced} client:load />
 
   <!-- About: Mission & Vision (static) -->
   <section class="w-full py-20 md:py-28">
@@ -74,7 +75,7 @@ const t = getTranslations(lang);
   </section>
 
   <!-- AI Transformation Section -->
-  <AITransformationSection expertise={t.about.expertise} client:visible />
+  <AITransformationSection expertise={t.about.expertise} client:load />
 
   <!-- Service Processes (static) -->
   <section class="w-full py-20 md:py-28">
@@ -141,12 +142,7 @@ const t = getTranslations(lang);
         {t.about.missionVision.description}
       </p>
       <div class="mt-8">
-        <a
-          href={localizedPath(lang, "/contact")}
-          class="inline-flex h-11 items-center justify-center rounded-full bg-primary px-8 text-base font-medium text-primary-foreground shadow-sm transition-colors hover:bg-primary/90"
-        >
-          {t.navbar.contact}
-        </a>
+        <ContactCTAButton label={t.navbar.contact} contactDrawer={t.contactDrawer} client:load />
       </div>
     </div>
   </section>

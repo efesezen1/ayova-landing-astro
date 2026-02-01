@@ -1,6 +1,8 @@
 ---
 import "../styles/global.css";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import { Toaster } from "sonner";
+import { ViewTransitions } from "astro:transitions";
 
 interface Props {
   title?: string;
@@ -44,19 +46,24 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
 
-    <!-- Dark mode init (prevent flash) -->
+    <ViewTransitions />
+
+    <!-- Dark mode init (prevent flash, re-runs on view transition swap) -->
     <script is:inline>
-      (function () {
+      function applyTheme() {
         const stored = localStorage.getItem("theme");
         if (stored === "light") {
           document.documentElement.classList.remove("dark");
         } else {
           document.documentElement.classList.add("dark");
         }
-      })();
+      }
+      applyTheme();
+      document.addEventListener("astro:after-swap", applyTheme);
     </script>
   </head>
   <body class="min-h-screen bg-background text-foreground antialiased overflow-x-hidden">
     <slot />
+    <Toaster richColors client:load />
   </body>
 </html>

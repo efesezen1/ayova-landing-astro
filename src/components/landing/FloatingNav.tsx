@@ -10,14 +10,16 @@ import {
   DrawerClose,
 } from "@/components/ui/drawer";
 import { Home, Package, Menu, X, Sun, Moon, Globe } from "lucide-react";
+import ContactDrawer from "./ContactDrawer";
 import type { Lang, Translations } from "@/lib/i18n";
 
 interface Props {
   lang: Lang;
   navbar: Translations["navbar"];
+  contactDrawer: Translations["contactDrawer"];
 }
 
-export function LandingFloatingNav({ lang, navbar }: Props) {
+export function LandingFloatingNav({ lang, navbar, contactDrawer }: Props) {
   const [isDark, setIsDark] = useState(true);
 
   const otherLang: Lang = lang === "en" ? "tr" : "en";
@@ -46,7 +48,6 @@ export function LandingFloatingNav({ lang, navbar }: Props) {
 
   function getSwitchedLangPath() {
     const path = typeof window !== "undefined" ? window.location.pathname : `/${lang}`;
-    // Replace the lang segment in the path
     return path.replace(`/${lang}`, `/${otherLang}`);
   }
 
@@ -70,9 +71,11 @@ export function LandingFloatingNav({ lang, navbar }: Props) {
         {isDark ? <Sun className="size-4" /> : <Moon className="size-4" />}
       </button>
 
-      <Button size="sm" className="hidden rounded-full text-xs sm:inline-flex" asChild>
-        <a href={`/${lang}/contact`}>{navbar.contact}</a>
-      </Button>
+      <ContactDrawer contactDrawer={contactDrawer}>
+        <Button size="sm" className="hidden cursor-pointer rounded-full text-xs sm:inline-flex">
+          {navbar.contact}
+        </Button>
+      </ContactDrawer>
 
       {/* Mobile menu */}
       <div className="sm:hidden">
@@ -112,9 +115,11 @@ export function LandingFloatingNav({ lang, navbar }: Props) {
                 {navbar.language}
               </a>
               <hr className="my-2 border-border" />
-              <Button className="w-full rounded-full" asChild>
-                <a href={`/${lang}/contact`}>{navbar.contact}</a>
-              </Button>
+              <ContactDrawer contactDrawer={contactDrawer}>
+                <Button className="w-full cursor-pointer rounded-full">
+                  {navbar.contact}
+                </Button>
+              </ContactDrawer>
             </nav>
           </DrawerContent>
         </Drawer>

@@ -85,7 +85,7 @@ const legalLinks = [
 
     <div class="mt-12 border-t border-border/50 pt-8">
       <p class="text-center text-sm text-muted-foreground">
-        {footer.copyright}
+        {footer.copyright.replace('{year}', String(currentYear))}
       </p>
     </div>
   </div>

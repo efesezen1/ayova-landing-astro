@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { OrbitingCircles } from "@/components/magicui/orbiting-circles";
 import {
   Accordion,
@@ -11,10 +12,19 @@ import {
   Wrench,
   Package,
   Sparkles,
+  Database,
 } from "lucide-react";
 import type { Translations } from "@/lib/i18n";
 
 const icons = [Brain, MessageSquare, Wrench, Package, Sparkles];
+const orbitIcons: { icon: typeof Brain; radius: number; delay: number }[] = [
+  { icon: Brain, radius: 80, delay: 0 },
+  { icon: MessageSquare, radius: 110, delay: 4 },
+  { icon: Wrench, radius: 140, delay: 9.3 },
+  { icon: Package, radius: 170, delay: 16 },
+  { icon: Sparkles, radius: 200, delay: 24 },
+  { icon: Database, radius: 230, delay: 33.3 },
+];
 const ids = ["auto-data", "nlp", "predictive", "stock", "custom"];
 
 interface Props {
@@ -36,17 +46,17 @@ export function TechnologiesSection({ advanced }: Props) {
 
         <div className="grid items-center gap-12 lg:grid-cols-2">
           {/* Orbital animation */}
-          <div className="relative mx-auto flex h-[400px] w-full max-w-[400px] items-center justify-center overflow-hidden">
-            <span className="pointer-events-none select-none text-center text-4xl font-semibold leading-none whitespace-pre-wrap bg-gradient-to-r from-blue-400 to-violet-400 bg-clip-text text-transparent">
+          <div className="relative mx-auto flex h-[500px] w-full max-w-[500px] items-center justify-center overflow-hidden">
+            <span className="pointer-events-none select-none text-center text-4xl font-semibold leading-none whitespace-pre-wrap">
               AI
             </span>
 
-            {icons.map((Icon, i) => (
+            {orbitIcons.map(({ icon: Icon, radius, delay }, i) => (
               <OrbitingCircles
                 key={i}
-                radius={i % 2 === 0 ? 120 : 170}
+                radius={radius}
                 duration={20 + i * 4}
-                delay={i * 4}
+                delay={delay}
                 reverse={i % 2 === 1}
               >
                 <div className="flex size-10 items-center justify-center rounded-full border border-border/50 bg-card/80 shadow-sm backdrop-blur-sm">

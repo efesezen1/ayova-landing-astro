@@ -2,6 +2,7 @@
 import LandingLayout from "../../layouts/LandingLayout.astro";
 import { LandingFloatingNav } from "../../components/landing/FloatingNav";
 import LandingFooter from "../../components/landing/LandingFooter.astro";
+import { ContactCTAButton } from "../../components/landing/ContactCTAButton";
 import { getTranslations, supportedLanguages, localizedPath } from "../../lib/i18n";
 import type { Lang } from "../../lib/i18n";
 
@@ -16,7 +17,7 @@ const t = getTranslations(lang);
 ---
 
 <LandingLayout lang={lang} title={`${t.products.title} - Ayova`} description={t.products.subtitle}>
-  <LandingFloatingNav lang={lang} navbar={t.navbar} client:load />
+  <LandingFloatingNav lang={lang} navbar={t.navbar} contactDrawer={t.contactDrawer} client:load />
 
   <div class="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
     <!-- Header -->
@@ -160,12 +161,7 @@ const t = getTranslations(lang);
               {t.cta.title}
             </h2>
             <div data-animate>
-              <a
-                href={localizedPath(lang, "/contact")}
-                class="inline-block rounded-full border border-white/30 bg-white/90 px-8 py-4 text-lg font-semibold text-blue-600 shadow-lg shadow-white/20 backdrop-blur-sm transition-all duration-300 hover:bg-white hover:text-blue-700 hover:shadow-white/30"
-              >
-                {t.navbar.contact}
-              </a>
+              <ContactCTAButton label={t.navbar.contact} contactDrawer={t.contactDrawer} variant="white" client:load />
             </div>
           </div>
         </div>
@@ -177,24 +173,31 @@ const t = getTranslations(lang);
 </LandingLayout>
 
 <script>
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("animate-in");
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.1 }
-  );
+  function initAnimations() {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animate-in");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
 
-  document.querySelectorAll("[data-animate]").forEach((el) => {
-    el.classList.add("opacity-0", "translate-y-6", "transition-all", "duration-700", "ease-out");
-    observer.observe(el);
-  });
+    document.querySelectorAll("[data-animate]").forEach((el) => {
+      el.classList.add("opacity-0", "translate-y-6", "transition-all", "duration-700", "ease-out");
+      observer.observe(el);
+    });
 
-  const style = document.createElement("style");
-  style.textContent = ".animate-in { opacity: 1 !important; transform: translateY(0) !important; }";
-  document.head.appendChild(style);
+    if (!document.querySelector("style[data-animate-style]")) {
+      const style = document.createElement("style");
+      style.setAttribute("data-animate-style", "");
+      style.textContent = ".animate-in { opacity: 1 !important; transform: translateY(0) !important; }";
+      document.head.appendChild(style);
+    }
+  }
+
+  document.addEventListener("astro:page-load", initAnimations);
 </script>

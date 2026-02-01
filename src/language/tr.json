@@ -165,6 +165,17 @@
       "learnMore": "Daha Fazla Bilgi"
     }
   },
+  "contactDrawer": {
+    "title": "İletişime Geçin",
+    "description": "Size en kısa sürede dönüş yapabilmemiz için e-posta uygulamanızı kullanmak ister misiniz?",
+    "openEmail": "E-posta Uygulamasını Aç",
+    "cancel": "İptal",
+    "footer": "E-posta uygulamanız açılacak ve info@ayova.co adresine yeni bir mesaj oluşturulacaktır.",
+    "copied": "E-posta adresi kopyalandı!",
+    "copiedDesc": "info@ayova.co panoya kopyalandı",
+    "copyFailed": "Kopyalama başarısız!",
+    "copyFailedDesc": "E-posta adresi kopyalanamadı"
+  },
   "footer": {
     "tagline": "Yapay zeka destekli çözümlerle iş süreçlerinizi dönüştürün",
     "product": {
@@ -181,6 +192,6 @@
       "privacy": "Gizlilik",
       "terms": "Şartlar"
     },
-    "copyright": "© 2025 Ayova Ltd Şti . All rights reserved."
+    "copyright": "© {year} Ayova Ltd Şti . All rights reserved."
   }
 }

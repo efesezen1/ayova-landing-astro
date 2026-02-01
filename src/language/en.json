@@ -165,6 +165,17 @@
       "learnMore": "Learn More"
     }
   },
+  "contactDrawer": {
+    "title": "Get in Touch",
+    "description": "Would you like to use your email app so we can get back to you as soon as possible?",
+    "openEmail": "Open Email App",
+    "cancel": "Cancel",
+    "footer": "Your email app will open and a new message will be created to info@ayova.co.",
+    "copied": "Email address copied!",
+    "copiedDesc": "info@ayova.co copied to clipboard",
+    "copyFailed": "Copy failed!",
+    "copyFailedDesc": "Could not copy email address"
+  },
   "footer": {
     "tagline": "Transform your business processes with AI-powered solutions",
     "product": {
@@ -181,6 +192,6 @@
       "privacy": "Privacy",
       "terms": "Terms"
     },
-    "copyright": "©2025 Ayova Ltd Şti . All rights reserved."
+    "copyright": "©{year} Ayova Ltd Şti . All rights reserved."
   }
 }
