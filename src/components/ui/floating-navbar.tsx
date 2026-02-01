@@ -47,18 +47,33 @@ export function FloatingNav({
         )}
       >
         {logo}
-        {navItems.map((navItem, idx) => (
-          <a
-            key={`nav-${idx}`}
-            href={navItem.link}
-            className={cn(
-              "relative flex items-center space-x-1 text-neutral-600 hover:text-neutral-500 dark:text-neutral-50 dark:hover:text-neutral-300"
-            )}
-          >
-            <span className="block sm:hidden">{navItem.icon}</span>
-            <span className="hidden text-sm sm:block">{navItem.name}</span>
-          </a>
-        ))}
+        {navItems.map((navItem, idx) => {
+          const isActive =
+            typeof window !== "undefined" &&
+            window.location.pathname.replace(/\/$/, "") ===
+              navItem.link.replace(/\/$/, "");
+
+          return (
+            <a
+              key={`nav-${idx}`}
+              href={navItem.link}
+              onClick={
+                isActive
+                  ? (e: React.MouseEvent) => e.preventDefault()
+                  : undefined
+              }
+              className={cn(
+                "relative flex items-center space-x-1",
+                isActive
+                  ? "text-neutral-900 dark:text-white cursor-default"
+                  : "text-neutral-600 hover:text-neutral-500 dark:text-neutral-50 dark:hover:text-neutral-300"
+              )}
+            >
+              <span className="block sm:hidden">{navItem.icon}</span>
+              <span className="hidden text-sm sm:block">{navItem.name}</span>
+            </a>
+          );
+        })}
         {children}
       </motion.div>
     </AnimatePresence>
