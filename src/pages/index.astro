@@ -1,3 +1,5 @@
 ---
-return Astro.redirect("/en", 302);
+export const prerender = true;
 ---
+
+<meta http-equiv="refresh" content="0;url=/en" />
