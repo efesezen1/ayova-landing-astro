@@ -1,0 +1,186 @@
+{
+  "hero": {
+    "title": {
+      "brand": "Ayova",
+      "with": "Transform Your Business",
+      "transform": "Processes"
+    },
+    "description": "From inventory management to customer relationships, from sales operation planning to integration, we design the future of businesses today.",
+    "cta": "Discover Our Products"
+  },
+  "navbar": {
+    "home": "Home",
+    "products": "Products",
+    "about": "About",
+    "menu": "Menu",
+    "navigation": "Navigation",
+    "settings": "Settings",
+    "language": "Language / Dil",
+    "theme": "Theme",
+    "contact": "Contact Us"
+  },
+  "features": {
+    "title": "Our Solutions",
+    "description": "Comprehensive artificial intelligence solutions designed to increase efficiency in every area of your business",
+    "items": [
+      {
+        "title": "CRM Integration",
+        "description": "Collect customer data in a single center to provide 360° customer view and personalized experience."
+      },
+      {
+        "title": "Sales Performance Analysis",
+        "description": "Monitor your sales team's performance and increase prediction accuracy with advanced reporting and dashboards."
+      },
+      {
+        "title": "Inventory Management",
+        "description": "Data-driven solutions for accurate and efficient inventory management. Reduce excess stock risk, ensure transparency in the supply chain."
+      },
+      {
+        "title": "Customer Relationship Management (CRM)",
+        "description": "Personalized CRM solutions that will help you get to know your customers better and build long-term relationships."
+      },
+      {
+        "title": "Sales Operations Planning",
+        "description": "More efficient, more predictable operations by optimizing sales processes end-to-end."
+      }
+    ]
+  },
+  "advanced": {
+    "title": "Advanced Technologies",
+    "description": "Take your business to the future with artificial intelligence and machine learning technologies",
+    "items": [
+      {
+        "title": "Automatic Data Analysis",
+        "description": "Strengthen your decision-making processes with real-time data processing and predictive analytics."
+      },
+      {
+        "title": "Natural Language Processing",
+        "description": "Instantly analyze your customer interactions and create personalized responses."
+      },
+      {
+        "title": "Predictive Maintenance",
+        "description": "Reduce your maintenance costs by predicting equipment failures in advance."
+      },
+      {
+        "title": "Smart Inventory Optimization",
+        "description": "Optimize your inventory levels and minimize costs with machine learning algorithms."
+      },
+      {
+        "title": "Boutique Solutions",
+        "description": "Special digital transformation roadmaps designed according to needs for each customer."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Take Your Business to the Next Level"
+  },
+  "about": {
+    "hero": {
+      "title": "About Us",
+      "description": "Ayova, a pioneer in artificial intelligence technologies, operates as a reliable partner in businesses' digital transformation journey."
+    },
+    "missionVision": {
+      "subtitle": "About Us",
+      "title": "Our Mission & Vision",
+      "description": "Driving innovation through artificial intelligence to transform businesses and create sustainable solutions"
+    },
+    "mission": {
+      "title": "Our Mission",
+      "description": "To optimize businesses' operational processes with artificial intelligence, increasing their efficiency and providing a competitive advantage. To develop sustainable business solutions by combining technology with human intelligence."
+    },
+    "vision": {
+      "title": "Our Vision",
+      "description": "To be the leading artificial intelligence solution provider in Turkey and the region. To play an effective role in the digital transformation of businesses of all sizes, building a technology-focused future."
+    },
+    "expertise": {
+      "title": "AI Transformation",
+      "description": "Artificial intelligence transformation solutions that will take your business to the future",
+      "items": [
+        {
+          "title": "Intelligent Data Analysis",
+          "description": "Analyze your big data sets with machine learning algorithms to gain insights that support your business decisions. Gain competitive advantage with real-time reporting and predictive models."
+        },
+        {
+          "title": "Automated Process Optimization",
+          "description": "Optimize your business processes with AI to increase efficiency. Automate manual tasks with intelligent workflows, minimizing error rates."
+        },
+        {
+          "title": "Personalized Customer Experience",
+          "description": "Analyze customer behavior with AI to offer personalized recommendations. Increase sales with dynamic pricing, recommendation systems, and targeted marketing campaigns."
+        }
+      ]
+    },
+    "processes": {
+      "title": "Our Service Processes",
+      "description": "We manage your projects with a comprehensive approach from start to finish",
+      "items": [
+        {
+          "title": "Planning",
+          "description": "We start with detailed analysis of your business needs and current situation. We develop strategic roadmaps, create implementation plans, and minimize potential risks."
+        },
+        {
+          "title": "Development",
+          "description": "We develop AI solutions using modern technologies and best practices. We create scalable and maintainable solutions with agile methodology for continuous improvement."
+        },
+        {
+          "title": "Integration",
+          "description": "We ensure seamless integration with your existing systems. We handle data migration and ensure system compatibility."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Start Your Digital Transformation Journey",
+      "description": "Meet our expert team and discover the most suitable solutions for your business",
+      "contact": "Contact Us",
+      "home": "Return to Homepage"
+    }
+  },
+  "products": {
+    "title": "Our Products",
+    "subtitle": "Discover our comprehensive suite of AI-powered solutions designed to transform your life and business",
+    "alya": {
+      "name": "Alya - Voice Chat to AI",
+      "description": "Feeling overwhelmed, misunderstood, or just need a space to process your thoughts? Meet Alya - a revolutionary app designed to be your trusted companion in emotional well-being. Offers voice conversation sessions with an empathetic AI that truly listens. Speak freely and without judgment, Alya provides understanding, therapeutic guidance in real-time.",
+      "features": [
+        "Voice Chat",
+        "Emotional Support",
+        "Real-time Guidance",
+        "Empathetic AI"
+      ]
+    },
+    "vefai": {
+      "name": "vefAI",
+      "description": "A comprehensive support system that empowers individuals experiencing loneliness with AI-assisted help, safety monitoring, and meaningful connections. Everything you need to provide the best care for your loved ones.",
+      "features": [
+        "AI Assistance",
+        "Safety Monitoring",
+        "Meaningful Connections",
+        "Comprehensive Care"
+      ]
+    },
+    "cta": {
+      "title": "Ready to Transform Your Experience?",
+      "description": "Be the first to know when our revolutionary AI products are ready. Join our waiting list and get early access.",
+      "joinWaitingList": "Join Waiting List",
+      "learnMore": "Learn More"
+    }
+  },
+  "footer": {
+    "tagline": "Transform your business processes with AI-powered solutions",
+    "product": {
+      "title": "Product",
+      "features": "Features",
+      "integrations": "Integrations"
+    },
+    "company": {
+      "title": "Company",
+      "about": "About"
+    },
+    "legal": {
+      "title": "Legal",
+      "privacy": "Privacy",
+      "terms": "Terms"
+    },
+    "copyright": "©2025 Ayova Ltd Şti . All rights reserved."
+  }
+}

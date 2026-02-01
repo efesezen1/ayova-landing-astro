@@ -12,57 +12,25 @@ import {
   Package,
   Sparkles,
 } from "lucide-react";
+import type { Translations } from "@/lib/i18n";
 
-const techItems = [
-  {
-    id: "auto-data",
-    title: "Otomatik Veri Analizi",
-    description:
-      "Yapay zeka algoritmaları ile verilerinizi otomatik olarak analiz edin, trendleri keşfedin ve iş kararlarınızı veriye dayalı hale getirin.",
-    icon: Brain,
-  },
-  {
-    id: "nlp",
-    title: "Doğal Dil İşleme",
-    description:
-      "Müşteri geri bildirimlerini ve iletişimlerini anlayan, sınıflandıran ve yanıtlayan NLP tabanlı çözümlerle müşteri deneyimini iyileştirin.",
-    icon: MessageSquare,
-  },
-  {
-    id: "predictive",
-    title: "Öngörücü Bakım",
-    description:
-      "Makine öğrenimi modelleri ile ekipman arızalarını önceden tahmin edin ve bakım maliyetlerinizi optimize edin.",
-    icon: Wrench,
-  },
-  {
-    id: "stock",
-    title: "Akıllı Stok Optimizasyonu",
-    description:
-      "Talep tahmini ve otomatik sipariş yönetimi ile stok seviyelerinizi optimize edin, fazla stok ve stok eksikliğini önleyin.",
-    icon: Package,
-  },
-  {
-    id: "custom",
-    title: "Butik Çözümler",
-    description:
-      "İşletmenizin benzersiz ihtiyaçlarına özel tasarlanmış yapay zeka çözümleri ile rekabet avantajı elde edin.",
-    icon: Sparkles,
-  },
-];
+const icons = [Brain, MessageSquare, Wrench, Package, Sparkles];
+const ids = ["auto-data", "nlp", "predictive", "stock", "custom"];
 
-const orbitIcons = [Brain, MessageSquare, Wrench, Package, Sparkles];
+interface Props {
+  advanced: Translations["advanced"];
+}
 
-export function TechnologiesSection() {
+export function TechnologiesSection({ advanced }: Props) {
   return (
     <section className="w-full py-20 md:py-28">
       <div className="mx-auto max-w-6xl px-4">
         <div className="mb-12 text-center">
           <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-            Teknolojilerimiz
+            {advanced.title}
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            En son yapay zeka teknolojileri ile iş süreçlerinizi güçlendirin
+            {advanced.description}
           </p>
         </div>
 
@@ -73,7 +41,7 @@ export function TechnologiesSection() {
               AI
             </span>
 
-            {orbitIcons.map((Icon, i) => (
+            {icons.map((Icon, i) => (
               <OrbitingCircles
                 key={i}
                 radius={i % 2 === 0 ? 120 : 170}
@@ -89,22 +57,26 @@ export function TechnologiesSection() {
           </div>
 
           {/* Accordion */}
-          <Accordion type="single" collapsible defaultValue="auto-data">
-            {techItems.map((item) => (
-              <AccordionItem key={item.id} value={item.id}>
-                <AccordionTrigger className="text-base hover:no-underline">
-                  <div className="flex items-center gap-3">
-                    <div className="flex size-8 shrink-0 items-center justify-center rounded-md bg-primary/10">
-                      <item.icon className="size-4 text-primary" />
+          <Accordion type="single" collapsible defaultValue={ids[0]}>
+            {advanced.items.map((item, index) => {
+              const Icon = icons[index % icons.length];
+              const id = ids[index % ids.length];
+              return (
+                <AccordionItem key={id} value={id}>
+                  <AccordionTrigger className="text-base hover:no-underline">
+                    <div className="flex items-center gap-3">
+                      <div className="flex size-8 shrink-0 items-center justify-center rounded-md bg-primary/10">
+                        <Icon className="size-4 text-primary" />
+                      </div>
+                      <span>{item.title}</span>
                     </div>
-                    <span>{item.title}</span>
-                  </div>
-                </AccordionTrigger>
-                <AccordionContent className="pl-11 text-muted-foreground">
-                  {item.description}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
+                  </AccordionTrigger>
+                  <AccordionContent className="pl-11 text-muted-foreground">
+                    {item.description}
+                  </AccordionContent>
+                </AccordionItem>
+              );
+            })}
           </Accordion>
         </div>
       </div>

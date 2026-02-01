@@ -1,0 +1,186 @@
+{
+  "hero": {
+    "title": {
+      "brand": "Ayova",
+      "with": "ile İş",
+      "transform": "Süreçlerinizi Dönüştürün"
+    },
+    "description": "Stok yönetiminden müşteri ilişkilerine, satış operasyon planlamasından entegrasyona kadar işletmelerin geleceğini bugünden tasarlıyoruz.",
+    "cta": "Ürünlerimizi Keşfedin"
+  },
+  "navbar": {
+    "home": "Ana Sayfa",
+    "products": "Ürünler",
+    "about": "Hakkımızda",
+    "menu": "Menü",
+    "navigation": "Navigasyon",
+    "settings": "Ayarlar",
+    "language": "Dil / Language",
+    "theme": "Tema",
+    "contact": "Bizimle İletişime Geçin"
+  },
+  "features": {
+    "title": "Çözümlerimiz",
+    "description": "İşletmenizin her alanında verimliliği artırmak için tasarlanmış kapsamlı yapay zeka çözümleri",
+    "items": [
+      {
+        "title": "CRM Entegrasyonu",
+        "description": "Müşteri verilerini tek merkezde toplayarak 360° müşteri görünümü ve kişiselleştirilmiş deneyim sağlayın."
+      },
+      {
+        "title": "Satış Performans Analizi",
+        "description": "Gelişmiş raporlama ve dashboard'lar ile satış ekibinizin performansını izleyin ve tahmin doğruluğunu artırın."
+      },
+      {
+        "title": "Stok Yönetimi",
+        "description": "Envanterin doğru ve verimli yönetilmesi için veri odaklı çözümler. Fazla stok riskini azaltma, tedarik zincirinde şeffaflık sağlama."
+      },
+      {
+        "title": "Müşteri İlişkileri Yönetimi (CRM)",
+        "description": "Müşterilerinizi daha iyi tanımanızı ve uzun vadeli ilişkiler kurmanızı sağlayacak kişiselleştirilmiş CRM çözümleri."
+      },
+      {
+        "title": "Satış Operasyon Planlama",
+        "description": "Satış süreçlerini uçtan uca optimize ederek daha verimli, daha öngörülebilir operasyonlar."
+      }
+    ]
+  },
+  "advanced": {
+    "title": "Gelişmiş Teknolojiler",
+    "description": "Yapay zeka ve makine öğrenmesi teknolojileri ile işletmenizi geleceğe taşıyın",
+    "items": [
+      {
+        "title": "Otomatik Veri Analizi",
+        "description": "Gerçek zamanlı veri işleme ve tahminsel analizlerle karar alma süreçlerinizi güçlendirin."
+      },
+      {
+        "title": "Doğal Dil İşleme",
+        "description": "Müşteri etkileşimlerinizi anında analiz edin ve kişiselleştirilmiş yanıtlar oluşturun."
+      },
+      {
+        "title": "Öngörücü Bakım",
+        "description": "Ekipman arızalarını önceden tahmin ederek bakım maliyetlerinizi düşürün."
+      },
+      {
+        "title": "Akıllı Stok Optimizasyonu",
+        "description": "Makine öğrenmesi algoritmaları ile stok seviyelerinizi optimize edin ve maliyetleri minimize edin."
+      },
+      {
+        "title": "Butik Çözümler",
+        "description": "Her müşteri için ihtiyaca göre tasarlanmış özel dijital dönüşüm yol haritaları."
+      }
+    ]
+  },
+  "cta": {
+    "title": "İşinizi Bir Sonraki Seviyeye Taşıyın"
+  },
+  "about": {
+    "hero": {
+      "title": "Hakkımızda",
+      "description": "Yapay zeka teknolojilerinde öncü olan Ayova, işletmelerin dijital dönüşüm yolculuğunda güvenilir bir partner olarak faaliyet göstermektedir."
+    },
+    "missionVision": {
+      "subtitle": "Hakkımızda",
+      "title": "Misyonumuz ve Vizyonumuz",
+      "description": "Yapay zeka ile işletmeleri dönüştürmek ve sürdürülebilir çözümler yaratmak için inovasyonu yönlendiriyoruz"
+    },
+    "mission": {
+      "title": "Misyonumuz",
+      "description": "İşletmelerin operasyonel süreçlerini yapay zeka ile optimize ederek, verimliliklerini artırmak ve rekabet avantajı sağlamak. Teknoloji ile insan zekasını birleştirerek, sürdürülebilir iş çözümleri geliştirmek."
+    },
+    "vision": {
+      "title": "Vizyonumuz",
+      "description": "Türkiye'nin ve bölgenin lider yapay zeka çözüm sağlayıcısı olmak. Her ölçekteki işletmenin dijital dönüşümünde etkili rol oynayarak, teknoloji odaklı bir gelecek inşa etmek."
+    },
+    "expertise": {
+      "title": "Yapay Zeka Dönüşümü",
+      "description": "İşletmenizi geleceğe taşıyacak yapay zeka dönüşüm çözümlerimiz",
+      "items": [
+        {
+          "title": "Akıllı Veri Analizi",
+          "description": "Makine öğrenmesi algoritmaları ile büyük veri setlerinizi analiz ederek, iş kararlarınızı destekleyen öngörüler elde edin. Gerçek zamanlı raporlama ve tahmin modelleri ile rekabet avantajı kazanın."
+        },
+        {
+          "title": "Otomatik Süreç Optimizasyonu",
+          "description": "İş süreçlerinizi AI ile optimize ederek verimliliği artırın. akıllı iş akışları ile manuel görevleri otomatikleştirin ve hata oranlarını minimize edin."
+        },
+        {
+          "title": "Kişiselleştirilmiş Müşteri Deneyimi",
+          "description": "Müşteri davranışlarını AI ile analiz ederek kişiselleştirilmiş öneriler sunun. Dinamik fiyatlandırma, öneri sistemleri ve hedefli pazarlama kampanyaları ile satışları artırın."
+        }
+      ]
+    },
+    "processes": {
+      "title": "Hizmet Süreçlerimiz",
+      "description": "Projelerinizi baştan sona kapsamlı bir yaklaşımla yönetiyoruz",
+      "items": [
+        {
+          "title": "Planlama",
+          "description": "İşletmenizin ihtiyaçları ve mevcut durumu hakkında detaylı analiz ile başlıyoruz. Stratejik yol haritaları geliştiriyor, uygulama planları oluşturuyor ve potansiyel riskleri minimize ediyoruz."
+        },
+        {
+          "title": "Geliştirme",
+          "description": "Modern teknolojiler ve en iyi uygulamaları kullanarak AI çözümleri geliştiriyoruz. Sürekli iyileştirme için çevik metodoloji ile ölçeklenebilir ve sürdürülebilir çözümler oluşturuyoruz."
+        },
+        {
+          "title": "Entegrasyon",
+          "description": "Mevcut sistemlerinizle sorunsuz entegrasyon sağlıyoruz. Veri migrasyonunu gerçekleştiriyor ve sistem uyumluluğunu garanti ediyoruz."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Dijital Dönüşüm Yolculuğunuza Başlayın",
+      "description": "Uzman ekibimizle tanışın ve işletmeniz için en uygun çözümleri keşfedin",
+      "contact": "Bizimle İletişime Geçin",
+      "home": "Ana Sayfaya Dön"
+    }
+  },
+  "products": {
+    "title": "Ürünlerimiz",
+    "subtitle": "Hayatınızı ve işinizi dönüştürmek için tasarlanmış kapsamlı yapay zeka destekli çözümler paketimizi keşfedin",
+    "alya": {
+      "name": "Alya - Voice Chat to AI",
+      "description": "Kendinizi bunalmış, anlaşılmamış hissediyor ya da sadece düşüncelerinizi işlemek için bir alana mı ihtiyaç duyuyorsunuz? Alya ile tanışın - duygusal refahınızda güvenilir bir yoldaş olmak üzere tasarlanmış devrim niteliğinde uygulama. Gerçekten dinleyen empatik bir AI ile sesli konuşma oturumları sunar. Özgürce ve yargısız konuşun, Alya gerçek zamanlı olarak anlayışlı, terapötik rehberlik sağlar.",
+      "features": [
+        "Sesli Sohbet",
+        "Duygusal Destek",
+        "Gerçek Zamanlı Rehberlik",
+        "Empatik Yapay Zeka"
+      ]
+    },
+    "vefai": {
+      "name": "vefAI",
+      "description": "Yalnızlık yaşayan bireyleri AI destekli yardım, güvenlik izleme ve anlamlı bağlantılarla güçlendiren kapsamlı destek sistemi. Sevdikleriniz için en iyi bakımı sağlamak için ihtiyacınız olan her şey.",
+      "features": [
+        "Yapay Zeka Desteği",
+        "Güvenlik İzleme",
+        "Anlamlı Bağlantılar",
+        "Kapsamlı Bakım"
+      ]
+    },
+    "cta": {
+      "title": "Deneyiminizi Dönüştürmeye Hazır mısınız?",
+      "description": "Devrim niteliğindeki AI ürünlerimiz hazır olduğunda ilk siz haberdar olun. Bekleme listemize katılın ve erken erişim elde edin.",
+      "joinWaitingList": "Bekleme Listesine Katıl",
+      "learnMore": "Daha Fazla Bilgi"
+    }
+  },
+  "footer": {
+    "tagline": "Yapay zeka destekli çözümlerle iş süreçlerinizi dönüştürün",
+    "product": {
+      "title": "Ürün",
+      "features": "Özellikler",
+      "integrations": "Entegrasyonlar"
+    },
+    "company": {
+      "title": "Şirket",
+      "about": "Hakkımızda"
+    },
+    "legal": {
+      "title": "Yasal",
+      "privacy": "Gizlilik",
+      "terms": "Şartlar"
+    },
+    "copyright": "© 2025 Ayova Ltd Şti . All rights reserved."
+  }
+}

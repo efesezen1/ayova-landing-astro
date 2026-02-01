@@ -9,15 +9,23 @@ import {
   DrawerTitle,
   DrawerClose,
 } from "@/components/ui/drawer";
-import { Home, Package, Menu, X, Sun, Moon } from "lucide-react";
+import { Home, Package, Menu, X, Sun, Moon, Globe } from "lucide-react";
+import type { Lang, Translations } from "@/lib/i18n";
 
-const navItems = [
-  { name: "Ana Sayfa", link: "/", icon: <Home className="size-4" /> },
-  { name: "Ürünler", link: "/tr/products", icon: <Package className="size-4" /> },
-];
+interface Props {
+  lang: Lang;
+  navbar: Translations["navbar"];
+}
 
-export function LandingFloatingNav() {
+export function LandingFloatingNav({ lang, navbar }: Props) {
   const [isDark, setIsDark] = useState(true);
+
+  const otherLang: Lang = lang === "en" ? "tr" : "en";
+
+  const navItems = [
+    { name: navbar.home, link: `/${lang}`, icon: <Home className="size-4" /> },
+    { name: navbar.products, link: `/${lang}/products`, icon: <Package className="size-4" /> },
+  ];
 
   useEffect(() => {
     setIsDark(document.documentElement.classList.contains("dark"));
@@ -36,33 +44,49 @@ export function LandingFloatingNav() {
     }
   }
 
+  function getSwitchedLangPath() {
+    const path = typeof window !== "undefined" ? window.location.pathname : `/${lang}`;
+    // Replace the lang segment in the path
+    return path.replace(`/${lang}`, `/${otherLang}`);
+  }
+
   return (
     <FloatingNavBase navItems={navItems}>
+      {/* Language switcher */}
+      <a
+        href={getSwitchedLangPath()}
+        className="relative flex items-center justify-center gap-1 rounded-full p-1.5 text-xs font-medium text-neutral-600 hover:text-neutral-500 dark:text-neutral-200 dark:hover:text-neutral-100"
+        aria-label={navbar.language}
+      >
+        <Globe className="size-4" />
+        <span className="uppercase">{otherLang}</span>
+      </a>
+
       <button
         onClick={toggleTheme}
         className="relative flex items-center justify-center rounded-full p-1.5 text-neutral-600 hover:text-neutral-500 dark:text-neutral-200 dark:hover:text-neutral-100"
-        aria-label="Tema değiştir"
+        aria-label={navbar.theme}
       >
         {isDark ? <Sun className="size-4" /> : <Moon className="size-4" />}
       </button>
 
       <Button size="sm" className="hidden rounded-full text-xs sm:inline-flex" asChild>
-        <a href="/tr/contact">Bizimle İletişime Geçin</a>
+        <a href={`/${lang}/contact`}>{navbar.contact}</a>
       </Button>
 
       {/* Mobile menu */}
       <div className="sm:hidden">
         <Drawer direction="right">
           <DrawerTrigger asChild>
-            <button className="p-1 text-neutral-600 dark:text-neutral-200" aria-label="Menü">
+            <button className="p-1 text-neutral-600 dark:text-neutral-200" aria-label={navbar.menu}>
               <Menu className="size-5" />
             </button>
           </DrawerTrigger>
           <DrawerContent>
             <DrawerHeader className="flex flex-row items-center justify-between">
-              <DrawerTitle>Menü</DrawerTitle>
+              <DrawerTitle>{navbar.menu}</DrawerTitle>
               <DrawerClose asChild>
-                <button className="p-1" aria-label="Kapat">
+                <button className="p-1" aria-label="Close">
                   <X className="size-5" />
                 </button>
               </DrawerClose>
@@ -79,8 +103,17 @@ export function LandingFloatingNav() {
                 </a>
               ))}
               <hr className="my-2 border-border" />
+              {/* Mobile language switcher */}
+              <a
+                href={getSwitchedLangPath()}
+                className="flex items-center gap-3 text-lg font-medium text-foreground"
+              >
+                <Globe className="size-4" />
+                {navbar.language}
+              </a>
+              <hr className="my-2 border-border" />
               <Button className="w-full rounded-full" asChild>
-                <a href="/tr/contact">Bizimle İletişime Geçin</a>
+                <a href={`/${lang}/contact`}>{navbar.contact}</a>
               </Button>
             </nav>
           </DrawerContent>

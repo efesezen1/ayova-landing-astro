@@ -1,22 +1,29 @@
 ---
+import { localizedPath } from "../../lib/i18n";
+import type { Lang, Translations } from "../../lib/i18n";
+
+interface Props {
+  lang: Lang;
+  footer: Translations["footer"];
+  navbar: Translations["navbar"];
+}
+
+const { lang, footer, navbar } = Astro.props;
 const currentYear = new Date().getFullYear();
 
 const productLinks = [
-  { name: "CRM Entegrasyonu", href: "/tr/products/crm" },
-  { name: "Stok Yönetimi", href: "/tr/products/stock" },
-  { name: "Satış Analizi", href: "/tr/products/sales" },
+  { name: footer.product.features, href: localizedPath(lang, "/products") },
+  { name: footer.product.integrations, href: localizedPath(lang, "/products") },
 ];
 
 const companyLinks = [
-  { name: "Hakkımızda", href: "/tr/about" },
-  { name: "İletişim", href: "/tr/contact" },
-  { name: "Kariyer", href: "/tr/careers" },
+  { name: footer.company.about, href: localizedPath(lang, "/about") },
+  { name: navbar.contact, href: localizedPath(lang, "/contact") },
 ];
 
 const legalLinks = [
-  { name: "Gizlilik Politikası", href: "/tr/privacy" },
-  { name: "Kullanım Koşulları", href: "/tr/terms" },
-  { name: "KVKK", href: "/tr/kvkk" },
+  { name: footer.legal.privacy, href: localizedPath(lang, "/privacy") },
+  { name: footer.legal.terms, href: localizedPath(lang, "/terms") },
 ];
 ---
 
@@ -25,17 +32,17 @@ const legalLinks = [
     <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
       <!-- Brand -->
       <div class="flex flex-col gap-4">
-        <a href="/" class="flex items-center gap-2">
+        <a href={localizedPath(lang, "/")} class="flex items-center gap-2">
           <img src="/logo-dark.png" alt="Ayova" class="h-8 w-auto rounded-none" />
         </a>
         <p class="text-sm text-muted-foreground leading-relaxed">
-          Yapay zeka destekli iş çözümleri ile şirketinizin dijital dönüşümünü hızlandırın.
+          {footer.tagline}
         </p>
       </div>
 
-      <!-- Ürün -->
+      <!-- Product -->
       <div>
-        <h3 class="mb-4 text-sm font-semibold text-foreground">Ürün</h3>
+        <h3 class="mb-4 text-sm font-semibold text-foreground">{footer.product.title}</h3>
         <ul class="flex flex-col gap-3">
           {productLinks.map((link) => (
             <li>
@@ -47,9 +54,9 @@ const legalLinks = [
         </ul>
       </div>
 
-      <!-- Şirket -->
+      <!-- Company -->
       <div>
-        <h3 class="mb-4 text-sm font-semibold text-foreground">Şirket</h3>
+        <h3 class="mb-4 text-sm font-semibold text-foreground">{footer.company.title}</h3>
         <ul class="flex flex-col gap-3">
           {companyLinks.map((link) => (
             <li>
@@ -61,9 +68,9 @@ const legalLinks = [
         </ul>
       </div>
 
-      <!-- Yasal -->
+      <!-- Legal -->
       <div>
-        <h3 class="mb-4 text-sm font-semibold text-foreground">Yasal</h3>
+        <h3 class="mb-4 text-sm font-semibold text-foreground">{footer.legal.title}</h3>
         <ul class="flex flex-col gap-3">
           {legalLinks.map((link) => (
             <li>
@@ -78,7 +85,7 @@ const legalLinks = [
 
     <div class="mt-12 border-t border-border/50 pt-8">
       <p class="text-center text-sm text-muted-foreground">
-        &copy; {currentYear} Ayova Ltd Şti. Tüm hakları saklıdır.
+        {footer.copyright}
       </p>
     </div>
   </div>
