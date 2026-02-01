@@ -22,7 +22,7 @@ const t = getTranslations(lang);
 
 <LandingLayout lang={lang}>
   <!-- Floating Navbar (scroll-aware, mobile drawer) -->
-  <LandingFloatingNav lang={lang} navbar={t.navbar} contactDrawer={t.contactDrawer} client:load />
+  <LandingFloatingNav lang={lang} navbar={t.navbar} contactDrawer={t.contactDrawer} currentPath={Astro.url.pathname} client:load />
 
   <!-- Hero Section (aurora animated background) -->
   <HeroSection hero={t.hero} lang={lang} client:load />

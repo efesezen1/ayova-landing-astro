@@ -17,9 +17,10 @@ interface Props {
   lang: Lang;
   navbar: Translations["navbar"];
   contactDrawer: Translations["contactDrawer"];
+  currentPath: string;
 }
 
-export function LandingFloatingNav({ lang, navbar, contactDrawer }: Props) {
+export function LandingFloatingNav({ lang, navbar, contactDrawer, currentPath }: Props) {
   const [isDark, setIsDark] = useState(true);
 
   const otherLang: Lang = lang === "en" ? "tr" : "en";
@@ -55,7 +56,7 @@ export function LandingFloatingNav({ lang, navbar, contactDrawer }: Props) {
   }
 
   function getSwitchedLangPath() {
-    const path = typeof window !== "undefined" ? window.location.pathname : `/${lang}`;
+    const path = typeof window !== "undefined" ? window.location.pathname : currentPath;
     return path.replace(`/${lang}`, `/${otherLang}`);
   }
 

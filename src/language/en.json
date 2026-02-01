@@ -158,6 +158,16 @@
         "Comprehensive Care"
       ]
     },
+    "aski": {
+      "name": "ASKİ Mobile",
+      "description": "A comprehensive utility management application for water service customers. Easily submit meter readings, track your bills, monitor service interruptions, and manage your water services — all from your phone.",
+      "features": [
+        "Meter Reading Submission",
+        "Bill Tracking & Payments",
+        "Service Interruption Alerts",
+        "Account Management"
+      ]
+    },
     "cta": {
       "title": "Ready to Transform Your Experience?",
       "description": "Be the first to know when our revolutionary AI products are ready. Join our waiting list and get early access.",

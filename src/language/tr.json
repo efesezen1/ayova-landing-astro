@@ -158,6 +158,16 @@
         "Kapsamlı Bakım"
       ]
     },
+    "aski": {
+      "name": "ASKİ Mobil",
+      "description": "Su hizmeti aboneleri için kapsamlı bir altyapı yönetim uygulaması. Sayaç endekslerinizi kolayca bildirin, faturalarınızı takip edin, kesintileri izleyin ve su hizmetlerinizi telefonunuzdan yönetin.",
+      "features": [
+        "Sayaç Endeks Bildirimi",
+        "Fatura Takibi ve Ödeme",
+        "Kesinti Bildirimleri",
+        "Hesap Yönetimi"
+      ]
+    },
     "cta": {
       "title": "Deneyiminizi Dönüştürmeye Hazır mısınız?",
       "description": "Devrim niteliğindeki AI ürünlerimiz hazır olduğunda ilk siz haberdar olun. Bekleme listemize katılın ve erken erişim elde edin.",

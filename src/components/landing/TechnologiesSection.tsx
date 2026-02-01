@@ -20,10 +20,10 @@ const icons = [Brain, MessageSquare, Wrench, Package, Sparkles];
 const orbitIcons: { icon: typeof Brain; radius: number; delay: number }[] = [
   { icon: Brain, radius: 80, delay: 0 },
   { icon: MessageSquare, radius: 110, delay: 4 },
-  { icon: Wrench, radius: 140, delay: 9.3 },
-  { icon: Package, radius: 170, delay: 16 },
-  { icon: Sparkles, radius: 200, delay: 24 },
-  { icon: Database, radius: 230, delay: 33.3 },
+  { icon: Wrench, radius: 140, delay: 48 },
+  { icon: Package, radius: 170, delay: 5 },
+  { icon: Sparkles, radius: 200, delay: 16 },
+  { icon: Database, radius: 230, delay: 24 },
 ];
 const ids = ["auto-data", "nlp", "predictive", "stock", "custom"];
 
@@ -55,8 +55,8 @@ export function TechnologiesSection({ advanced }: Props) {
               <OrbitingCircles
                 key={i}
                 radius={radius}
-                duration={20 + i * 4}
-                delay={delay}
+                duration={20 + Math.random() * 10}
+                delay={delay + Math.random() * 10}
                 reverse={i % 2 === 1}
               >
                 <div className="flex size-10 items-center justify-center rounded-full border border-border/50 bg-card/80 shadow-sm backdrop-blur-sm">
