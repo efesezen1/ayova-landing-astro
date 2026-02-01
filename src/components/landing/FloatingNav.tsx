@@ -34,15 +34,23 @@ export function LandingFloatingNav({ lang, navbar, contactDrawer }: Props) {
   }, []);
 
   function toggleTheme() {
-    const html = document.documentElement;
-    if (html.classList.contains("dark")) {
-      html.classList.remove("dark");
-      localStorage.setItem("theme", "light");
-      setIsDark(false);
+    const update = () => {
+      const html = document.documentElement;
+      if (html.classList.contains("dark")) {
+        html.classList.remove("dark");
+        localStorage.setItem("theme", "light");
+        setIsDark(false);
+      } else {
+        html.classList.add("dark");
+        localStorage.setItem("theme", "dark");
+        setIsDark(true);
+      }
+    };
+
+    if (document.startViewTransition) {
+      document.startViewTransition(update);
     } else {
-      html.classList.add("dark");
-      localStorage.setItem("theme", "dark");
-      setIsDark(true);
+      update();
     }
   }
 

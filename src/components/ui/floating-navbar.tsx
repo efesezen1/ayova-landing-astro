@@ -21,7 +21,7 @@ export function FloatingNav({
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY >= 100) {
+      if (window.scrollY >= 0) {
         setVisible(true);
       } else {
         setVisible(false);
