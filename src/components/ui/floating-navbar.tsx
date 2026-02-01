@@ -10,10 +10,12 @@ interface NavItem {
 
 export function FloatingNav({
   navItems,
+  logo,
   className,
   children,
 }: {
   navItems: NavItem[];
+  logo?: React.ReactNode;
   className?: string;
   children?: React.ReactNode;
 }) {
@@ -44,6 +46,7 @@ export function FloatingNav({
           className
         )}
       >
+        {logo}
         {navItems.map((navItem, idx) => (
           <a
             key={`nav-${idx}`}

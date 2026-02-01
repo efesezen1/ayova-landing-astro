@@ -13,7 +13,7 @@ export function HeroSection({ hero, lang }: Props) {
     <AuroraBackground className="min-h-screen w-full">
       <div className="mx-auto flex max-w-4xl flex-col items-center gap-6 px-4 text-center">
         <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl">
-          <span className="text-[#002fa7]">
+          <span className="text-primary">
             {hero.title.brand}
           </span>{" "}
           {hero.title.with} {hero.title.transform}

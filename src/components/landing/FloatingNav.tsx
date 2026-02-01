@@ -60,7 +60,15 @@ export function LandingFloatingNav({ lang, navbar, contactDrawer }: Props) {
   }
 
   return (
-    <FloatingNavBase navItems={navItems}>
+    <FloatingNavBase
+      navItems={navItems}
+      logo={
+        <a href={`/${lang}`} className="flex items-center">
+          <img src="/logo-light.png" alt="Ayova" className="block w-32 dark:hidden" />
+          <img src="/logo-dark.png" alt="Ayova" className="hidden w-32 dark:block" />
+        </a>
+      }
+    >
       {/* Language switcher */}
       <a
         href={getSwitchedLangPath()}
