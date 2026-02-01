@@ -1,50 +1,149 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import LandingLayout from "../layouts/LandingLayout.astro";
+import { LandingFloatingNav } from "../components/landing/FloatingNav";
+import { HeroSection } from "../components/landing/HeroSection";
+import { SolutionsCarousel } from "../components/landing/SolutionsCarousel";
+import { TechnologiesSection } from "../components/landing/TechnologiesSection";
+import { AITransformationSection } from "../components/landing/AITransformationSection";
+import LandingFooter from "../components/landing/LandingFooter.astro";
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-					>read the docs
-				</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out <a
-					href="https://github.com/Charca/astro-blog-template"
-					>astro-blog-template
-				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
-		</main>
-		<Footer />
-	</body>
-</html>
+<LandingLayout>
+  <!-- Floating Navbar (scroll-aware, mobile drawer) -->
+  <LandingFloatingNav client:load />
+
+  <!-- Hero Section (aurora animated background) -->
+  <HeroSection client:load />
+
+  <!-- Solutions Carousel -->
+  <SolutionsCarousel client:visible />
+
+  <!-- Technologies: orbital animation + accordion -->
+  <TechnologiesSection client:visible />
+
+  <!-- About: Mission & Vision (static) -->
+  <section class="w-full py-20 md:py-28">
+    <div class="mx-auto max-w-6xl px-4">
+      <div class="mb-12 text-center">
+        <h2 class="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+          Hakkımızda
+        </h2>
+        <p class="mt-4 text-lg text-muted-foreground">
+          Geleceğin iş dünyasını bugünden şekillendiriyoruz
+        </p>
+      </div>
+      <div class="grid gap-8 md:grid-cols-2">
+        <!-- Misyon -->
+        <div class="rounded-xl border border-border/50 bg-card/50 p-8 backdrop-blur-sm">
+          <div class="mb-4 flex size-12 items-center justify-center rounded-lg bg-primary/10">
+            <svg xmlns="http://www.w3.org/2000/svg" class="size-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+          </div>
+          <h3 class="mb-3 text-xl font-semibold text-foreground">Misyonumuz</h3>
+          <p class="text-muted-foreground leading-relaxed">
+            İşletmelerin dijital dönüşüm süreçlerini yapay zeka ve yenilikçi teknolojilerle
+            hızlandırarak, iş süreçlerini daha verimli, akıllı ve sürdürülebilir hale getirmek.
+          </p>
+        </div>
+        <!-- Vizyon -->
+        <div class="rounded-xl border border-border/50 bg-card/50 p-8 backdrop-blur-sm">
+          <div class="mb-4 flex size-12 items-center justify-center rounded-lg bg-primary/10">
+            <svg xmlns="http://www.w3.org/2000/svg" class="size-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+            </svg>
+          </div>
+          <h3 class="mb-3 text-xl font-semibold text-foreground">Vizyonumuz</h3>
+          <p class="text-muted-foreground leading-relaxed">
+            Türkiye'nin ve bölgenin lider yapay zeka çözümleri sağlayıcısı olarak,
+            her ölçekteki işletmenin teknolojiye erişimini kolaylaştırmak ve global
+            pazarda rekabet güçlerini artırmak.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI Transformation Section -->
+  <AITransformationSection client:visible />
+
+  <!-- Service Processes (static) -->
+  <section class="w-full py-20 md:py-28">
+    <div class="mx-auto max-w-6xl px-4">
+      <div class="mb-12 text-center">
+        <h2 class="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+          Hizmet Sürecimiz
+        </h2>
+        <p class="mt-4 text-lg text-muted-foreground">
+          Projenizi başarıya taşıyan 3 adımlı sürecimiz
+        </p>
+      </div>
+      <div class="grid gap-8 md:grid-cols-3">
+        <!-- Planlama -->
+        <div class="flex flex-col items-center text-center">
+          <div class="mb-6 flex size-16 items-center justify-center rounded-2xl bg-primary/10">
+            <svg xmlns="http://www.w3.org/2000/svg" class="size-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+          </div>
+          <div class="mb-2 text-sm font-semibold text-primary">01</div>
+          <h3 class="mb-3 text-xl font-semibold text-foreground">Planlama</h3>
+          <p class="text-muted-foreground leading-relaxed">
+            İş ihtiyaçlarınızı analiz eder, en uygun çözüm stratejisini birlikte belirleriz.
+          </p>
+        </div>
+        <!-- Geliştirme -->
+        <div class="flex flex-col items-center text-center">
+          <div class="mb-6 flex size-16 items-center justify-center rounded-2xl bg-primary/10">
+            <svg xmlns="http://www.w3.org/2000/svg" class="size-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+            </svg>
+          </div>
+          <div class="mb-2 text-sm font-semibold text-primary">02</div>
+          <h3 class="mb-3 text-xl font-semibold text-foreground">Geliştirme</h3>
+          <p class="text-muted-foreground leading-relaxed">
+            Agile metodoloji ile çözümünüzü geliştirip, her aşamada geri bildirim alırız.
+          </p>
+        </div>
+        <!-- Entegrasyon -->
+        <div class="flex flex-col items-center text-center">
+          <div class="mb-6 flex size-16 items-center justify-center rounded-2xl bg-primary/10">
+            <svg xmlns="http://www.w3.org/2000/svg" class="size-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+            </svg>
+          </div>
+          <div class="mb-2 text-sm font-semibold text-primary">03</div>
+          <h3 class="mb-3 text-xl font-semibold text-foreground">Entegrasyon</h3>
+          <p class="text-muted-foreground leading-relaxed">
+            Çözümü mevcut sistemlerinize sorunsuz entegre eder, eğitim ve destek sağlarız.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section (static) -->
+  <section class="w-full bg-muted/30 py-20 md:py-28">
+    <div class="mx-auto max-w-3xl px-4 text-center">
+      <h2 class="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+        İşinizi Bir Sonraki Seviyeye Taşıyın
+      </h2>
+      <p class="mt-4 text-lg text-muted-foreground">
+        Yapay zeka destekli çözümlerimiz ile iş süreçlerinizi dönüştürmeye
+        bugün başlayın.
+      </p>
+      <div class="mt-8">
+        <a
+          href="/tr/contact"
+          class="inline-flex h-11 items-center justify-center rounded-full bg-primary px-8 text-base font-medium text-primary-foreground shadow-sm transition-colors hover:bg-primary/90"
+        >
+          Bizimle İletişime Geçin
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <LandingFooter />
+</LandingLayout>
