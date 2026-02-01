@@ -11,13 +11,13 @@ import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://example.com",
+  site: "https://ayova.co",
   integrations: [mdx(), sitemap(), react()],
 
   adapter: cloudflare({
-      platformProxy: {
-          enabled: true,
-      },
+    platformProxy: {
+      enabled: true,
+    },
   }),
 
   vite: {
