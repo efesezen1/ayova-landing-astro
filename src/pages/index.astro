@@ -1,5 +1,25 @@
 ---
+import { getTranslations } from "../lib/i18n";
+
 export const prerender = true;
+
+const t = getTranslations("en");
 ---
 
-<meta http-equiv="refresh" content="0;url=/en" />
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ayova</title>
+    <meta name="description" content={t.about.vision.description} />
+    <meta property="og:title" content="Ayova" />
+    <meta property="og:description" content={t.about.vision.description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ayova.co" />
+    <meta property="og:image" content="https://ayova.co/logo-dark.png" />
+    <link rel="icon" type="image/png" href="/logo-dark.png" />
+    <meta http-equiv="refresh" content="0;url=/en" />
+  </head>
+  <body></body>
+</html>
